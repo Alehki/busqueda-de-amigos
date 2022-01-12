@@ -33,12 +33,12 @@ form_input.addEventListener(`keyup`, e =>{
 
 const fa_angle_down = document.querySelectorAll(`.fa-angle-down`)
 
-console.log(fa_angle_down)
-
 for(const element of fa_angle_down){
-    element.classList.remove(`fa-angle-down--active`)
     element.addEventListener(`click`, e =>{
-        e.target.classList.toggle(`fa-angle-down--active`)
+        for(const element of fa_angle_down){
+            if(element.classList.contains(`fa-angle-down--active`)) element.classList.remove(`fa-angle-down--active`)
+            else e.target.classList.add(`fa-angle-down--active`)
+        }
     })
 }
 
@@ -54,6 +54,10 @@ const funcionElement = (elemento) =>{
     if(elemento.parentElement.parentElement.parentElement.classList.contains(`no-desaparece`) == false){
         elemento.parentElement.parentElement.parentElement.classList.add(`no-desaparece`);
         elemento.textContent = "Volver"
+        
+        // La linea form_input.value = "" es para que al apretar click en algun enlace se reinicie el value 
+        form_input.value = ""
+        form_input.setAttribute(`disabled`, ``)
         for(const sec of section.children){
             if(sec.classList.contains(`no-desaparece`) == false){
                 sec.classList.add(`box--disabled`)
@@ -73,7 +77,9 @@ const funcionElement = (elemento) =>{
             }
             elemento.parentElement.parentElement.parentElement.classList.remove(`no-desaparece`)
             elemento.textContent = "Leer más"
-
+            // La linea form_input.value = "" es para que al apretar click en algun enlace se reinicie el value 
+            form_input.value = ""
+            form_input.removeAttribute(`disabled`, ``)
         }
         return false
     }

@@ -118,9 +118,13 @@ body{
 .box-description__extra{
     width: 90%;
     height: 25px;
-    margin-left: 20px;
-    position: relative;
+    position: absolute;
+    bottom: 20px;
     overflow: hidden;
+}
+
+.box-description__extra > a{
+    padding-top: 4px;
 }
 
 .link{
@@ -268,17 +272,33 @@ body{
         width: 100%;
     }
 
+        
+    .no-desaparece > figure > img{
+        padding: 1em;
+    }
+
     .no-desaparece > .box-description {
         position: relative;
         bottom: 0;
         padding-top: 10px;
     }
 
-    .no-desaparece > .box-description > .box-description__extra{
+    .desplegable{
         position: relative;
-        bottom: -60px;
+    }
+
+    .no-desaparece > .box-description > .desplegable > img{
+        width: 40%;
+        position: absolute;
+        top: -50px;
+        left: 215px;
+    }
+
+    .no-desaparece > .box-description > .box-description__extra{
+        bottom: -70px;
         right: 0;
         overflow: initial;
+        /* background-color: red; */
     }
 
     .no-desaparece > .box-description > .box-description__extra > i{
@@ -287,10 +307,6 @@ body{
 
     .no-desaparece > .box-description > .box-description__title{
         font-size: 1.8rem;
-    }
-    
-    .no-desaparece > figure > img{
-        padding: 1em;
     }
 
     .no-desaparece > .box-description > .desplegable{
