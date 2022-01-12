@@ -33,14 +33,28 @@ form_input.addEventListener(`keyup`, e =>{
 
 const fa_angle_down = document.querySelectorAll(`.fa-angle-down`)
 
+
+// for(const element of fa_angle_down){
+//     element.addEventListener(`click`, e =>{
+//         for(const element of fa_angle_down){
+//             console.log(element)
+
+//             if(element.classList.contains(`fa-angle-down--active`)) element.classList.remove(`fa-angle-down--active`)
+//             else e.target.classList.add(`fa-angle-down--active`)
+//         }
+//     })
+// }
+
 for(const element of fa_angle_down){
     element.addEventListener(`click`, e =>{
-        for(const element of fa_angle_down){
-            if(element.classList.contains(`fa-angle-down--active`)) element.classList.remove(`fa-angle-down--active`)
-            else e.target.classList.add(`fa-angle-down--active`)
+        for(const element2 of fa_angle_down){
+            if(element2.classList.contains(`fa-angle-down--active`)) element2.classList.remove(`fa-angle-down--active`)
         }
+        e.target.classList.add(`fa-angle-down--active`)
     })
 }
+
+
 
 
                         // ESCUCHAR LINK DE UN BOX
